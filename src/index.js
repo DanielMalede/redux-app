@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import  {configureStore} from 'redux'
+import { configureStore } from 'redux'
 import { Provider } from 'react-redux';
 import userReducer from './store/reducer/user-reducer';
 const usersStore = configureStore({ userReducer, user: {} })
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={usersStore}>
