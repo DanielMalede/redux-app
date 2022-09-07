@@ -3,17 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { configureStore } from 'redux'
+import { createStore,compose } from 'redux'
 import { Provider } from 'react-redux';
-import userReducer from './store/reducer/user-reducer';
-const usersStore = configureStore({ userReducer, user: {} })
+import usersReducer from './store/reducer/users-Reducer';
+
+const enhancers = compose(
+  window.__REDUX_DEVTOOLS_EXTENSION__&&window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+const usersStore = createStore( usersReducer, {user: []} ,enhancers)
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <Provider store={usersStore}>
     <App />
   </Provider>
 );
-
+          
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
