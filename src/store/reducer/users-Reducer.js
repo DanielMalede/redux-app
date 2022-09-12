@@ -1,6 +1,4 @@
 import { GET_BY_ID,ADD_USER,UPDATE_USER,DELETE_USER } from "../types/users-types";
-
-
 export default function usersReducer({users}, action) {
   switch (action.type) {
     case GET_BY_ID :
