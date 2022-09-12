@@ -1,6 +1,4 @@
 import { ADD_USER ,GET_BY_ID,UPDATE_USER,DELETE_USER} from "../types/users-types"
-
-
 const addUserAction = () => {
     return { type: ADD_USER }
 }
