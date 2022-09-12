@@ -1,16 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { createStore,compose } from 'redux'
-import { Provider } from 'react-redux';
-import usersReducer from './store/reducer/users-Reducer';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createStore, compose } from "redux";
+import { Provider } from "react-redux";
+import usersReducer from "./store/reducer/users-Reducer";
 const enhancers = compose(
-  window.__REDUX_DEVTOOLS_EXTENSION__&&window.__REDUX_DEVTOOLS_EXTENSION__()
-)
-const usersStore = createStore( usersReducer, {user: []} ,enhancers)
-const root = ReactDOM.createRoot(document.getElementById('root'));
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+const usersStore = createStore(usersReducer, { user: [] }, enhancers);
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={usersStore}>
     <App />
